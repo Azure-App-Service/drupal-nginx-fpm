@@ -16,24 +16,15 @@ ENV DRUPAL_HOME "/home/site/wwwroot"
 # 1. Drupal
 # ====================
 
-    # -------------
-	# ~. essentials
-	# -------------
 RUN mkdir -p $DOCKER_BUILD_HOME
 WORKDIR $DOCKER_BUILD_HOME
-RUN set -ex \
-	# no essentials need to be installed.
 
-    # -------------
-	# 1. Drupal
-	# -------------
-    && mkdir -p $DRUPAL_SOURCE 
-    # cp in final 
+# -------------
+# 1. Drupal
+# -------------
+RUN  mkdir -p $DRUPAL_SOURCE 
+COPY drupal.tar.gz $DRUPAL_SOURCE/
     
-	# -------------
-	# Configuration
-	# -------------
-  
 # =====
 # final
 # =====
@@ -44,7 +35,6 @@ COPY php.ini /etc/php/7.0/cli/php.ini
 # nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY drupal.tar.gz $DRUPAL_SOURCE/
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
