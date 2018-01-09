@@ -1,4 +1,4 @@
-FROM appsvcorg/nginx-fpm:0.1
+FROM appsvcorg/nginx-fpm:0.2-test
 MAINTAINER Azure App Service Container Images <appsvc-images@microsoft.com>
 
 # ========
