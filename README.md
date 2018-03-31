@@ -8,7 +8,7 @@ You can find it in Docker hub here [https://hub.docker.com/r/appsvcorg/drupal-ng
 
 # Components
 This docker image currently contains the following components:
-1. Drupal (8.4.4)  
+1. Drupal (8.5.1)  
 2. nginx (1.13.8)
 3. PHP (7.0.27)
 4. Drush 
